@@ -21,6 +21,7 @@
     --text-color: #e1e1e6;
     --remove-text-color: #f75a68;
     --empty-text-color: #4e5455;
+    --scroll-color: #4a808c;
 }
 
 html{
@@ -125,8 +126,12 @@ table *{
 }
 
 .container{
-    max-height: 55rem;
-    overflow: auto;
+    border: 1px solid var(--table-border);
+    border-radius: 1.2rem;
+}
+
+tr:not(:last-child) {
+    border-bottom: 1px solid var(--table-border);
 }
 
 table th{
@@ -137,11 +142,12 @@ table th{
     padding: 1.6rem 4rem; 
 }
 
-table th:first-child {
+th:first-child {
     border-top-left-radius: 1.2rem;
+    width: 50rem;
 }
 
-table th:last-child {
+th:last-child {
     border-top-right-radius: 1.2rem;
 }
 
@@ -170,6 +176,21 @@ table tr:nth-child(even) {
     justify-content: center;
     gap: 6rem;
     margin: 13rem auto 20rem;
+}
+
+.scroll::-webkit-scrollbar{
+    width: 0.6rem;
+}
+
+.scroll::-webkit-scrollbar-thumb{
+    background-color: var(--scroll-color);
+    border: none;
+    border-radius: 1rem;
+}
+
+.scroll{
+    max-height: 43.4rem;   
+    overflow-y: scroll;    
 }
 
 table td {

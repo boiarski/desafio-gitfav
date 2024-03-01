@@ -37,8 +37,7 @@ export class Favorites {
             if(user.login === undefined){
                 throw new Error('Usuário não encontrado!')
             }
-
-            document.querySelector('.initialTable').classList.add('empty');
+            
             this.entries = [user, ...this.entries];
             this.update();
             this.save();
@@ -78,8 +77,8 @@ export class FavoritesView extends Favorites {
     }
 
     update() {
-        this.removeAllTr();       
-
+        this.removeAllTr();
+        
         this.entries.forEach(user => {
             const row = this.createRow();
             
@@ -107,17 +106,17 @@ export class FavoritesView extends Favorites {
 
         tr.innerHTML = `
             <td class="user">
-                <img src="https://github.com/maykbrito.png" alt="Imagem de maykbrito">
-                <a href="https://github.com/maykbrito" target="_blank">
-                    <p>Mayk Brito</p>
+                <img src="" alt="">
+                <a href="" target="_blank">
+                    <p></p>
                     <span></span>
                 </a>
             </td>
             <td class="repositories">
-                76
+        
             </td>
             <td class="followers">
-                9589
+        
             </td>
             <td>
                 <button class="remove">Remover</button>
