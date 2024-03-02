@@ -79,6 +79,12 @@ export class FavoritesView extends Favorites {
     update() {
         this.removeAllTr();
         
+        if(this.entries.length === 0){
+            document.querySelector('.initialTable').classList.remove('empty');
+        }else{
+            document.querySelector('.initialTable').classList.add('empty');
+        }
+        
         this.entries.forEach(user => {
             const row = this.createRow();
             

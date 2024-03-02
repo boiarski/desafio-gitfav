@@ -115,8 +115,6 @@ header{
 table {
     border-collapse: collapse;
     border-spacing: 0;
-    border-radius: 12px;
-    overflow: hidden;
     width: 100%;
 }
 
@@ -128,6 +126,7 @@ table *{
 .container{
     border: 1px solid var(--table-border);
     border-radius: 1.2rem;
+    overflow: hidden;
 }
 
 tr:not(:last-child) {
@@ -139,16 +138,20 @@ table th{
     text-align: left;
     font-weight: bold;
     line-height: 160%;
-    padding: 1.6rem 4rem; 
+    padding: 1.5rem 0; 
 }
 
 th:first-child {
-    border-top-left-radius: 1.2rem;
     width: 50rem;
+    padding-left: 4rem;
+}
+
+th:nth-child(2){
+    width: 21rem;
 }
 
 th:last-child {
-    border-top-right-radius: 1.2rem;
+    width: 17.8rem
 }
 
 table tr:nth-child(odd) {
@@ -167,7 +170,7 @@ table tr:nth-child(even) {
     font-size: 4rem;
     line-height: 2.4rem;
     color: var(--empty-text-color);
-    font-family: "Roboto Mono", monospace;;
+    font-family: "Roboto Mono", monospace;
 }
 
 .emptyTable{
@@ -180,6 +183,7 @@ table tr:nth-child(even) {
 
 .scroll::-webkit-scrollbar{
     width: 0.6rem;
+    padding-right: .5rem;
 }
 
 .scroll::-webkit-scrollbar-thumb{
@@ -188,13 +192,33 @@ table tr:nth-child(even) {
     border-radius: 1rem;
 }
 
+.scroll::-webkit-scrollbar-button{
+    display: none;
+}
+
+.scroll::-webkit-scrollbar-track{
+    display: none;
+}
+
+.scroll::-webkit-scrollbar-track-piece{
+    display: none;
+}
+
+.scroll::-webkit-scrollbar-corner{
+    display: none;
+}
+
+.scroll::-webkit-resizer{
+    display: none;
+} 
+
 .scroll{
     max-height: 43.4rem;   
     overflow-y: scroll;    
 }
 
 table td {
-    padding: 1.5rem 4rem;
+    padding: 1.5rem 0;
     text-align: left;
 }
 
@@ -202,6 +226,16 @@ td.user {
     display: flex;
     align-items: center;
     gap: 1rem;
+    padding-left: 4rem;
+    width: 50rem;
+}
+
+td.repositories{
+    width: 21.9rem;
+}
+
+td.followers{
+    width: 21.9rem;
 }
 
 td.user a {
@@ -227,5 +261,7 @@ td.user a p {
     border: none;
 
     cursor: pointer;
+    width: 17.8rem;
+    text-align: left;
 }
 
